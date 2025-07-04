@@ -110,7 +110,7 @@ function createMySQLConfigFile() {
         exit
     fi
 
-    content=$(cat $ROOT_DIR/etc/template/$CNF_TEMPLATE_FILE | sed "s/@user/${!DBUSER}/g" | sed "s/@password/${!DBPASSWORD}/g" | sed "s/@host/${!DBHOST}/g" | sed "s/@port/${!DBPORT}/g")
+    content=$(cat $ROOT_DIR/template/$CNF_TEMPLATE_FILE | sed "s/@user/${!DBUSER}/g" | sed "s/@password/${!DBPASSWORD}/g" | sed "s/@host/${!DBHOST}/g" | sed "s/@port/${!DBPORT}/g")
 
     if [ ! -f $destinationFile ]; then #test if the file exists
         print "Config file $destinationFile does not exist."
